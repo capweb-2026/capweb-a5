@@ -15,7 +15,7 @@ export function validateMessage(raw){
 }
 
 export function replyTo(message){
-    let text = message.trim().toLowerCase()
+    const text = message.trim().toLowerCase()
     if (text === "salut" || text === "bonjour"){
         return "salut"
     }

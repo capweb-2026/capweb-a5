@@ -26,7 +26,7 @@ if (localHistorique) { //if it exists
   }
 }
 
-submit?.eddEventListener('click', (event) => {
+submit?.eddEventListener('click', () => {
 
   //const texte = champ.value.trim();
 
