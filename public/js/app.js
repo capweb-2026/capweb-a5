@@ -98,7 +98,7 @@ formulaire?.addEventListener('submit', (event) => {
 
 });
 
-effacer?.addEventListener('click', (event) => {
+effacer?.addEventListener('click', () => {
   if (confirm("Effacer la conversation?")) {
     historique.length = 0;
     localStorage.removeItem('capweb.historique');
