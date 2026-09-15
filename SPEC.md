@@ -11,17 +11,17 @@ et pertinentes sur les termes et expressions liés à ces trois domaines.
 
 ## Critères d'acceptation
 
-1. **Nom**— Quand l’identité de l’assistant est affichée, le système affiche le nom `Codea`.
+1. **Nom**— Quand l’identité de l’assistant est affichée, le système affiche le nom `CODEA`.
 
-2. **Emoji** — Quand l’identité de l’assistant est affichée, le système affiche exactement un emoji `🛡️`.
+2. **Emoji** — Quand l’identité de l’assistant est affichée, le système affiche exactement un emoji `📝`.
 
-3. **Accueil** — Quand l’utilisateur ouvre l’assistant, le système affiche un message d’accueil contenant le nom `Codea`.
+3. **Accueil** — Quand l’utilisateur ouvre l’assistant, le système affiche un message d’accueil contenant le nom `CODEA` et l'emoji '📝'.
 
-4. **Suggestions** — Quand l’utilisateur arrive sur l’accueil, le système affiche exactement trois suggestions de questions liées au thème A5.
+4. **Suggestions** — Quand l’utilisateur arrive sur l’accueil, le système affiche exactement trois suggestions de questions liées au thème 'coach d'anglais technique'.
 
-5. **Réponses signées** — Quand l’assistant fournit une réponse, le système affiche une signature contenant le nom `Codea`.
+5. **Réponses signées** — Quand l’assistant fournit une réponse, le système affiche une signature contenant le nom `CODEA`.
 
-6. **Contrat CP1** — Quand les fonctionnalités de l’identité sont utilisées, le système conserve le contrat CP1 toujours vert.
+6. **Contrat CP1** — Quand les tests du contrat dans tests/ sont exécutés, ils restent tous verts.
 
 
 ## Hors périmètre
@@ -47,10 +47,10 @@ et pertinentes sur les termes et expressions liés à ces trois domaines.
 
 L'identité de l'assistant doit contenir :
 
-* un nom : `Codea` ;
-* un emoji : `🛡️` ;
-* un message d'accueil contenant `Codea` ;
-* exactement trois suggestions liées au thème A5.
+* un nom : `CODEA` ;
+* un emoji : `📝` ;
+* un message d'accueil contenant `CODEA` ;
+* exactement trois suggestions liées au thème 'coach d'anglais technique'.
 
 ### Fonctions attendues
 
