@@ -26,9 +26,7 @@ if (localHistorique) { //if it exists
   }
 }
 
-// J1 : interface seule, on bloque l’envoi et on l’explique.
-formulaire?.addEventListener('submit', (event) => {
-  event.preventDefault();
+submit?.eddEventListener('click', (event) => {
 
   //const texte = champ.value.trim();
 
@@ -88,6 +86,11 @@ formulaire?.addEventListener('submit', (event) => {
     champ.focus();
     localStorage.setItem('capweb.historique', JSON.stringify(historique))
   }
+});
+
+// J1 : interface seule, on bloque l’envoi et on l’explique.
+formulaire?.addEventListener('submit', (event) => {
+  event.preventDefault();
 
   if (statut) {
     statut.textContent = 'Interface prête ; les réponses arrivent au J2.';
