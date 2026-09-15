@@ -1,0 +1,32 @@
+body { 
+    font-family: system-ui, sans-serif; 
+    /* margin: 2rem;  */
+    color: #15213a; 
+    background: white; 
+    box-sizing: border-box;
+}
+
+header, main, footer{
+    width: 100%;
+    max-width: 760px;
+    padding: 0 24px;
+    box-sizing: border-box; 
+    margin-inline: auto;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    min-height: 120px;
+}
+
+textarea:focus{
+    background: rgb(223, 231, 250);
+}
+
+/* main { 
+    max-width: 48rem; 
+    margin-inline: auto;  
+} */
