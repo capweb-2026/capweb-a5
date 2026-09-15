@@ -1,0 +1,70 @@
+# SPEC.md — *nom de la fonctionnalité*
+
+> Modèle à copier à la racine de votre dépôt. Une spec dit **ce que** le système doit faire, pas comment. Chaque critère doit pouvoir être vérifié par un test automatique ou par une démo de 30 secondes. Un exemple complet se trouve en fin de fichier.
+
+## Objectif
+
+Le chatbot aide l’utilisateur à comprendre et utiliser le vocabulaire des
+ entretiens, de la documentation et des revues de code. L’utilisateur attend 
+des explications claires, simples 
+et pertinentes sur les termes et expressions liés à ces trois domaines.
+
+## Critères d'acceptation
+
+1. **Nom**— Quand l’identité de l’assistant est affichée, le système affiche le nom `Codea`.
+
+2. **Emoji** — Quand l’identité de l’assistant est affichée, le système affiche exactement un emoji `🛡️`.
+
+3. **Accueil** — Quand l’utilisateur ouvre l’assistant, le système affiche un message d’accueil contenant le nom `Codea`.
+
+4. **Suggestions** — Quand l’utilisateur arrive sur l’accueil, le système affiche exactement trois suggestions de questions liées au thème A5.
+
+5. **Réponses signées** — Quand l’assistant fournit une réponse, le système affiche une signature contenant le nom `Codea`.
+
+6. **Contrat CP1** — Quand les fonctionnalités de l’identité sont utilisées, le système conserve le contrat CP1 toujours vert.
+
+
+## Hors périmètre
+
+* Modifier le contrat CP1 existant ou ses tests.
+* Ajouter de nouvelles dépendances.
+* Modifier les fichiers de configuration, les scripts ou le CI.
+* Ajouter des fonctionnalités qui ne concernent pas l'identité de l'assistant.
+* Ajouter ou utiliser des données personnelles, des secrets ou des clés API.
+* Modifier `SPEC.md` ou `AGENTS.md`.
+* Modifier le fonctionnement général du chatbot au-delà de ce qui est nécessaire pour l'identité.
+
+## Données et fonctions attendues
+
+### Fichiers
+
+* `public/js/persona.js` : contient les données et fonctions liées à l'identité de l'assistant.
+* `public/index.html` : permet l'affichage de l'identité, de l'accueil et des suggestions.
+* `public/js/app.js` : utilise les informations de l'identité pour l'affichage dans l'application.
+* `server/app.js` : sert les fichiers nécessaires selon sa liste blanche.
+
+### Données
+
+L'identité de l'assistant doit contenir :
+
+* un nom : `Codea` ;
+* un emoji : `🛡️` ;
+* un message d'accueil contenant `Codea` ;
+* exactement trois suggestions liées au thème A5.
+
+### Fonctions attendues
+
+Dans `public/js/persona.js`, les fonctions liées à l'identité doivent permettre de :
+
+* récupérer le nom de l'assistant ;
+* récupérer l'emoji ;
+* récupérer le message d'accueil ;
+* récupérer les trois suggestions ;
+* fournir la signature utilisée pour les réponses.
+
+Les fonctions doivent retourner les valeurs nécessaires à l'affichage de l'identité.
+
+
+### Questions ouvertes
+
+Aucune.
