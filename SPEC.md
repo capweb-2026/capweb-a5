@@ -63,6 +63,21 @@ Dans `public/js/persona.js`, les fonctions liées à l'identité doivent permett
 Les fonctions doivent retourner les valeurs nécessaires à l'affichage de l'identité.
 
 
+## Apparence
+
+L'interface de CODEA doit avoir une apparence claire, moderne et cohérente avec son identité de coach d'anglais technique.
+
+L'apparence doit notamment améliorer :
+- le header et l'identité de CODEA ;
+- la zone d'accueil ;
+- les messages de l'utilisateur et de l'assistant ;
+- les suggestions de questions.
+
+L'interface doit être lisible et agréable sur ordinateur et mobile.
+
+Les changements d'apparence ne doivent pas modifier le comportement du chatbot ni le contrat CP1.
+
+
 ### Questions ouvertes
 
 Aucune.

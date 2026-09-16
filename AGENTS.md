@@ -60,6 +60,9 @@ Une tâche est finie seulement si **tout** ceci est vrai :
 5. Si un critère de `SPEC.md` est ambigu, poser la question au lieu de deviner.
 6. À la fin, résumer les fichiers touchés et demander à l'humain la sortie de `npm run verify`.
 7. Chaque demande d'autorisation d'écriture porte une justification courte et exacte : quel fichier, pour quelle étape du plan.
+8. Respecter les exigences d'apparence définies dans `SPEC.md`.
+9. Pour une tâche de style, privilégier les fichiers CSS et ne modifier le HTML ou JavaScript que si c'est strictement nécessaire à l'apparence.
+10. Ne pas modifier le comportement fonctionnel du chatbot pour améliorer son apparence.
 
 ---
 
