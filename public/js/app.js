@@ -1,7 +1,26 @@
 import { validateMessage, replyTo } from './brain.js';
 import { renderMessages } from './view.js';
+import { getName, getEmoji, getGreeting, getSuggestions } from './persona.js';
 
 document.querySelector('#status').textContent = 'Votre point de départ est prêt.';
+
+const entete = document.querySelector('header h1');
+if (entete) {
+  entete.textContent = `${getName()} ${getEmoji()}`;
+}
+
+const accueil = document.querySelector('#accueil');
+if (accueil) {
+  accueil.textContent = getGreeting();
+}
+
+const suggestions = document.querySelectorAll('#suggestions li');
+const textes = getSuggestions();
+suggestions.forEach((ligne, index) => {
+  if (index < textes.length) {
+    ligne.textContent = textes[index];
+  }
+});
 
 const formulaire = document.querySelector('#chat-form');
 const statut = document.querySelector('#status');
@@ -92,9 +111,9 @@ submit?.addEventListener('click', () => {
 formulaire?.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  if (statut) {
-    statut.textContent = 'Interface prête ; les réponses arrivent au J2.';
-  }
+  //if (statut) {
+  //  statut.textContent = ' Interface prête ; les réponses arrivent au J2.';
+  //}
 
 });
 
