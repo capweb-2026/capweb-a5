@@ -1,3 +1,5 @@
+import { getSignature } from './persona.js';
+
 export function renderMessages(messages, container) {
   const lignes = [];
  
@@ -7,7 +9,7 @@ export function renderMessages(messages, container) {
     if (message.role === 'user') {
       li.textContent = 'Vous : ' + message.text;
     } else {
-      li.textContent = 'Cap Web : ' + message.text;
+      li.textContent = getSignature() + message.text;
     }
 
     lignes.push(li);
