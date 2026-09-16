@@ -1,13 +1,8 @@
-# SPEC.md — *nom de la fonctionnalité*
-
-> Modèle à copier à la racine de votre dépôt. Une spec dit **ce que** le système doit faire, pas comment. Chaque critère doit pouvoir être vérifié par un test automatique ou par une démo de 30 secondes. Un exemple complet se trouve en fin de fichier.
+# SPEC.md — Identité de CODEA
 
 ## Objectif
 
-Le chatbot aide l’utilisateur à comprendre et utiliser le vocabulaire des
- entretiens, de la documentation et des revues de code. L’utilisateur attend 
-des explications claires, simples 
-et pertinentes sur les termes et expressions liés à ces trois domaines.
+Le chatbot aide l’utilisateur à comprendre et utiliser le vocabulaire des entretiens, de la documentation et des revues de code. L’utilisateur attend des explications claires, simples et pertinentes sur les termes et expressions liés à ces trois domaines.
 
 ## Critères d'acceptation
 
@@ -17,22 +12,25 @@ et pertinentes sur les termes et expressions liés à ces trois domaines.
 
 3. **Accueil** — Quand l’utilisateur ouvre l’assistant, le système affiche un message d’accueil contenant le nom `CODEA` et l'emoji '📝'.
 
-4. **Suggestions** — Quand l’utilisateur arrive sur l’accueil, le système affiche exactement trois suggestions de questions liées au thème 'coach d'anglais technique'.
+4. **Suggestions** — Quand l’utilisateur arrive sur l’accueil, le système affiche exactement trois suggestions de questions liées au thème 'coach d'anglais technique':
+- `Comment puis-je améliorer mon anglais technique ?`
+- `Comment puis-je expliquer clairement mon code en anglais ?`
+- `Quel vocabulaire dois-je connaître pour les revues de code ?`
 
-5. **Réponses signées** — Quand l’assistant fournit une réponse, le système affiche une signature contenant le nom `CODEA`.
+5. **Réponses signées** — Quand l’assistant fournit une réponse, le système affiche une signature contenant le nom `CODEA` au lieu de 'Cap Web'.
 
-6. **Contrat CP1** — Quand les tests du contrat dans tests/ sont exécutés, ils restent tous verts.
+6. **Contrat CP1** — Quand les tests du contrat CP1 dans tests/ sont exécutés, ils restent tous verts.
 
 
 ## Hors périmètre
 
-* Modifier le contrat CP1 existant ou ses tests.
-* Ajouter de nouvelles dépendances.
-* Modifier les fichiers de configuration, les scripts ou le CI.
-* Ajouter des fonctionnalités qui ne concernent pas l'identité de l'assistant.
-* Ajouter ou utiliser des données personnelles, des secrets ou des clés API.
-* Modifier `SPEC.md` ou `AGENTS.md`.
-* Modifier le fonctionnement général du chatbot au-delà de ce qui est nécessaire pour l'identité.
+* Ne jamais modifier le contrat CP1 existant ou ses tests.
+* Ne jamais ajouter de nouvelles dépendances.
+* Ne jamais modifier les fichiers de configuration, les scripts ou le CI.
+* Ne jamais ajouter des fonctionnalités qui ne concernent pas l'identité de l'assistant.
+* Ne jamais ajouter ou utiliser des données personnelles, des secrets ou des clés API.
+* Ne jamais modifier `SPEC.md` ou `AGENTS.md`.
+* Ne jamais modifier le fonctionnement général du chatbot au-delà de ce qui est nécessaire pour l'identité.
 
 ## Données et fonctions attendues
 

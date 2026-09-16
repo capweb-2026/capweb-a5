@@ -3,15 +3,16 @@
 
 
 ## Le projet
-CODEA est un chatbot en JavaScript natif, sans framework, spécialisé dans coach d'anglais technique. Il répond avec un cerveau à règles et, à partir de mercredi, avec une IA appelée par le serveur.
+CODEA est un chatbot en JavaScript natif, sans framework, spécialisé dans coach d'anglais technique. Il répond avec un cerveau à règles et avec une IA appelée par le serveur.
 
 Fichiers principaux :
 
-- `public/js/brain.js` : fonctions pures `validateMessage` et `replyTo`, aucun accès à la page ;
-- `public/js/view.js` : affichage, uniquement avec `textContent` ;
+- `public/js/brain.js` : fonctions pures `validateMessage` et `replyTo`, aucun accès à la page html ;
+- `public/js/view.js` : affichage, uniquement avec `textContent`, aucun accès à la page html ;
 - `public/js/app.js` : câblage du formulaire, de l'historique et de la mémoire ;
 - `server/app.js` : serveur local qui ne sert que les fichiers de sa liste blanche ;
 - `tests/contrat/` et `browser/contrat.spec.js` : le contrat fourni par le formateur.
+- `public/js/persona.js` : données et fonctions liées à l'identité de CODEA ;
 
 ## Commandes
 
