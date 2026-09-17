@@ -95,13 +95,14 @@ async function traiterApiChat(req, res) {
     envoyerJson(res, 200, { reponse: replyTo(message), source: 'regles', degrade: false });
     return;
   }
-  // Autres demandes : IA puis repli (SPEC.md : délai max + mode dégradé visible).
-  try {
-    const messages = construireMessages(message, historiqueBrut);
-    const reponse = await appelerIA(messages);
-    envoyerJson(res, 200, { reponse, source: 'ia', degrade: false });
-  } catch {
-    envoyerJson(res, 200, { reponse: replyTo(message), source: 'regles', degrade: true });
+  // Autres demandes : IA via le module dédié (jamais de throw).
+  // source 'ia' : réponse passerelle ; source 'regles' : fallback replyTo, mode dégradé visible.
+  const messages = construireMessages(message, historiqueBrut);
+  const resultat = await appelerIA(messages);
+  if (resultat.source === 'ia') {
+    envoyerJson(res, 200, { reponse: resultat.texte, source: 'ia', degrade: false });
+  } else {
+    envoyerJson(res, 200, { reponse: resultat.texte, source: 'regles', degrade: true });
   }
 }
 

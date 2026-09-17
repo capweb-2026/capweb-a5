@@ -66,12 +66,13 @@ export default async function handler(req, res) {
     res.status(200).json({ reponse: replyTo(message), source: 'regles', degrade: false });
     return;
   }
-  // Autres demandes : IA puis repli testé (SPEC.md : délai max + mode dégradé visible).
-  try {
-    const messages = construireMessages(message, historiqueBrut);
-    const reponse = await appelerIA(messages);
-    res.status(200).json({ reponse, source: 'ia', degrade: false });
-  } catch {
-    res.status(200).json({ reponse: replyTo(message), source: 'regles', degrade: true });
+  // Autres demandes : IA via le module dédié (jamais de throw).
+  // source 'ia' : réponse passerelle ; source 'regles' : fallback replyTo, mode dégradé visible.
+  const messages = construireMessages(message, historiqueBrut);
+  const resultat = await appelerIA(messages);
+  if (resultat.source === 'ia') {
+    res.status(200).json({ reponse: resultat.texte, source: 'ia', degrade: false });
+  } else {
+    res.status(200).json({ reponse: resultat.texte, source: 'regles', degrade: true });
   }
 }
