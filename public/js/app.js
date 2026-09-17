@@ -45,7 +45,7 @@ if (localHistorique) { //if it exists
   }
 }
 
-submit?.addEventListener('click', () => {
+submit?.addEventListener('click', async () => {
 
   //const texte = champ.value.trim();
 
@@ -96,9 +96,32 @@ submit?.addEventListener('click', () => {
       role: 'user',
       text: result.value
     });
+    let texteAssistant = replyTo(result.value);
+    try {
+      const appel = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', accept: 'application/json' },
+        body: JSON.stringify({ message: result.value, historique })
+      });
+      if (appel.ok) {
+        const donnees = await appel.json();
+        if (donnees && typeof donnees.reponse === 'string' && donnees.reponse.trim() !== '') {
+          texteAssistant = donnees.reponse;
+        }
+        if (donnees && donnees.degrade === true) {
+          statut.textContent = 'Mode dégradé actif : réponse locale.';
+        } else {
+          statut.textContent = '';
+        }
+      } else {
+        statut.textContent = '';
+      }
+    } catch {
+      statut.textContent = '';
+    }
     historique.push({
       role: 'assistant',
-      text: replyTo(result.value)
+      text: texteAssistant
     });
     renderMessages(historique, messages);
     champ.value = "";
