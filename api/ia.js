@@ -86,7 +86,8 @@ function texteSecours(messages) {
 // seul appelerIA l'appelle, et appelerIA convertit tout en repli.
 async function appelerPasserelle(messages, options = {}) {
   const cible = options !== null && typeof options === 'object' ? options : {};
-  const url = cible.url !== undefined ? cible.url : process.env.CAPWEB_IA_URL;
+  const urlBase = cible.url !== undefined ? cible.url : process.env.CAPWEB_IA_URL;
+  const url = `${urlBase.replace(/\/$/, '')}/chat/completions`;
   const cle = cible.cle !== undefined ? cible.cle : process.env.CAPWEB_IA_CLE;
   const delaiMs = cible.delaiMs !== undefined ? cible.delaiMs : DELAI_MAX_MS;
   const fetchImpl = cible.fetchImpl !== undefined ? cible.fetchImpl : fetch;
